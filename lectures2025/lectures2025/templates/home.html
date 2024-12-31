@@ -1,0 +1,15 @@
+{% extends "lectures2025/base.html" %}
+
+{% block titulo %}
+AÑADIR LIBRO
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Benvinguts a la Biblioteca Esteller-Palomar</h1>
+    <a href="{% url 'add_llibre' %}">Afegeix un nou llibre</a>
+    <ul>
+        {% for propietari in propietaris %}
+            <li><a href="{% url 'perfil' propietari.pk %}">{{ propietari }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock contenido %}

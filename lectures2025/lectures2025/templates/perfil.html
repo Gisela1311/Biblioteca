@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Perfil</title>
-</head>
-<body>
+{% extends "lectures2025/base.html" %}
+
+{% block titulo %}
+AÑADIR LIBRO
+{% endblock titulo %}
+
+{% block contenido %}
     <h1>Perfil de {{ propietari }}</h1>
     <h2>Libros leídos:</h2>
     <ul>
@@ -16,5 +17,4 @@
             </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock contenido %}
