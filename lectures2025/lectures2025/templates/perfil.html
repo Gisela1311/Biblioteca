@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil</title>
+</head>
+<body>
+    <h1>Perfil de {{ propietari }}</h1>
+    <h2>Libros leídos:</h2>
+    <ul>
+        {% for llibre in llibres %}
+            <li>
+                {{ llibre }}
+                {% if llibre.llib_portada %}
+                    <img src="{{ llibre.llib_portada.url }}" alt="Portada de {{ llibre }}" style="max-height: 200px;"/>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

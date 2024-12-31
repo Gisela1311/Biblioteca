@@ -4,4 +4,4 @@ from .models import *
 admin.site.register(Llibre)
 admin.site.register(Propietari)
 admin.site.register(Lector)
-admin.site.register()
+#admin.site.register()
