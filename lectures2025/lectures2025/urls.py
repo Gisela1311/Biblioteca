@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('add_llibre/', views.add_llibre, name='add_llibre'),
-    path('perfil/<int:prop_id>/', views.perfil, name='perfil'),
+    path('home/', views.HomeView.as_view(), name='home'),
+    path('afegeix_llibre/', views.afegir_llibre.as_view(), name='afegir_llibre'),
+    path('perfil/', views.perfil_lector.as_view(), name='perfil'),
 ]

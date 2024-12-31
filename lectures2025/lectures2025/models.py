@@ -42,6 +42,7 @@ class Llibre(models.Model):
     llib_genere = models.CharField(verbose_name="génere literari", choices=genere, max_length=2, blank=True)
     llib_pagines = models.IntegerField(verbose_name='número de pàgines del llibre')
     llib_propietari = models.ForeignKey(Propietari, on_delete=models.CASCADE, verbose_name="propietari del llibre", null=True)
+    llib_lector= models.ForeignKey('Lector', on_delete=models.CASCADE, verbose_name="qui ha llegit el llibre", null=True)
     llib_data_lectura = models.DateField()
     llib_portada = models.ImageField(upload_to='portadas/', verbose_name='Portada del llibre', null=True, blank=True)
 
