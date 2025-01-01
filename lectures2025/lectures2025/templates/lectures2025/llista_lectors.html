@@ -1,0 +1,16 @@
+{% extends "lectures2025/base.html" %}
+
+{% block titulo %}
+Llista dels lectors
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Llista de Lectors</h1> 
+    <ul>
+         {% for lector in lectores %} 
+         <li> 
+            <a href="{% url 'perfil_lector' lector.pk %}">{{ lector.lec_nom }}</a> 
+        </li> 
+        {% endfor %} 
+    </ul>
+{% endblock contenido %}

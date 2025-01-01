@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'lectures2025'
+    'lectures2025',
 ]
 
 MIDDLEWARE = [

@@ -8,11 +8,16 @@ AÑADIR LIBRO
 {% block contenido %}
 
 <h1>Añadir un nuevo libro</h1>
-    <form method="post" enctype="multipart/form-data">  <!-- Agrega enctype -->
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
 
+    <form method="post" enctype="multipart/form-data"> 
+        {% csrf_token %} 
+        <h2>Formulario de Libro</h2> 
+        {{ llibre_form.as_p }} 
+        <h2>Formulario de Propietario</h2> 
+        {{ propietari_form.as_p }} 
+        <h2>Formulario de Lector</h2> 
+        {{ lector_form.as_p }} 
+        <button type="submit">Enviar</button> 
+    </form>    
 {% endblock contenido %}
 

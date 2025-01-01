@@ -16,6 +16,10 @@ class Persona(models.Model):
 
 class Propietari(Persona):
     prop_fk = models.SmallAutoField(verbose_name="id propietari", primary_key=True)
+    prop_nom= models.CharField(max_length=100, verbose_name="propietari del llibre")
+
+    def __str__(self):
+        return self.prop_nom
 
 class Llibre(models.Model):
     llib_pk = models.SmallAutoField(verbose_name="id llibre", primary_key=True)
@@ -41,14 +45,16 @@ class Llibre(models.Model):
     ]
     llib_genere = models.CharField(verbose_name="génere literari", choices=genere, max_length=2, blank=True)
     llib_pagines = models.IntegerField(verbose_name='número de pàgines del llibre')
-    llib_propietari = models.ForeignKey(Propietari, on_delete=models.CASCADE, verbose_name="propietari del llibre", null=True)
-    llib_lector= models.ForeignKey('Lector', on_delete=models.CASCADE, verbose_name="qui ha llegit el llibre", null=True)
-    llib_data_lectura = models.DateField()
+    llib_data_lectura = models.DateField(verbose_name='finalització de lectura')
     llib_portada = models.ImageField(upload_to='portadas/', verbose_name='Portada del llibre', null=True, blank=True)
 
     def __str__(self):
-        return self.llib_nom
+        return f"{self.llib_nom} {self.llib_autor}"
 
 class Lector(Persona):
     lec_fk = models.SmallAutoField(verbose_name='id del lector', primary_key=True)
+    lec_nom= models.CharField(max_length=100, verbose_name="lector del llibre")
     llib_nom_fk = models.ForeignKey(Llibre, on_delete=models.CASCADE, verbose_name='llibres llegits')
+
+    def __str__(self):
+        return f"{self.lec_nom} {self.llib_nom_fk}"
